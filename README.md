@@ -2,27 +2,24 @@
 
 **AutoSubs** is a powerful, AI-driven web application designed to generate, time, and edit subtitles with precision. Built for creators who need pixel-perfect timing for music videos, anime, and Japanese content.
 
-> **New in v2.0**: Completely redesigned Dashboard UI, Smart "Magic Wand" Timing, Undo System, and Project Management!
-
-![AutoSubs UI Concept](https://via.placeholder.com/800x450?text=AutoSubs+Dashboard+Preview)
-
 ## ✨ Key Features
 
 ### 🧠 Smart AI Processing
-- **Auto-Transcription**: Powered by `faster-whisper` (Kotoba-Whisper v1.0) for state-of-the-art Japanese recognition.
+- **Auto-Transcription**: Powered by `faster-whisper` (Kotoba-Whisper v2.0) for state-of-the-art Japanese recognition.
 - **Auto-Translation**: Optional Japanese → English translation.
-- **Energy-Based Timing**: Analyzes audio waveforms to align lyrics perfectly with vocals, even when AI transcription struggles.
-- **Demucs Vocals Separation**: Automatically separates vocals from background music to make transcription 10x more accurate.
+- **Demucs Vocals Separation**: Automatically separates vocals from background music.
+- **Integrated Vocals Player**: Switch between the original audio and isolated vocals instantly to hear lyrics clearly.
 
 ### 🎛️ Professional Editor Dashboard
 - **Timeline Cards**: A clean, card-based interface for every subtitle segment.
-- **"Good" Status Locking**: Mark segments as "Good" (✅) to lock them. Locked segments become read-only to prevent accidental edits.
+- **Smart Focus Scrolling**: The editor automatically scrolls to the active segment while playing, keeping your place without losing context.
+- **"Good" Status Locking**: Mark segments as "Good" (✅) to lock them. Locked segments become read-only.
 - **Smart Snap (Magic Wand ✨)**: Messed up a segment? One click snaps it back to the nearest raw AI timestamp.
 - **Gapless Editing**: Use the **Snap-to-Previous** button (`|<`) to instantly align a segment's start time with the previous segment's end time.
-- **Merge & Split**: Easily merge fragmented lines or delete unwanted ones.
 
 ### 🛡️ Safety & Workflow
 - **Global Undo System**: Made a mistake? A floating "Undo" notification lets you revert any action (Timing, Text, Delete, Merge).
+- **High-Quality Downloads**: Automatically detects and downloads the best available video quality (up to 4K) from YouTube.
 - **Project Save/Load**: Save your work as a `.json` project file and resume later exactly where you left off.
 - **Update Text Only**: Have perfect timing but want to change the lyrics? Use the "Update Text Only" feature to swap the text while keeping your locked timestamps intact.
 
