@@ -16,8 +16,6 @@
 
 It combines state-of-the-art AI (**Kotoba-Whisper v2.0**) with a modern **Vue 3** dashboard to give you complete control over your subtitles.
 
-> **New in v2.0**: Integrated Vocals Player, 4K Video Downloader, and Smart "Magic Wand" Timing!
-
 ---
 
 ## ⚡ Core Features
@@ -92,7 +90,6 @@ npm run dev
 | :--- | :--- |
 | **Transcribe** | Enter a YouTube URL and let the AI generate subtitles from scratch. |
 | **Custom Script** | Paste precise lyrics (JP/Romaji/EN) and let the AI **synchronize** them to the audio. |
-| **Magic Wand ✨** | Click to snap a segment's timing to the nearest raw AI timestamp. |
 | **Snap `\|<`** | Instantly align a segment's start to the previous segment's end (Gapless). |
 | **Lock ✅** | Mark a segment as "Good" to prevent accidental edits. |
 
@@ -117,6 +114,6 @@ A: Start the specific download tool or check `yt-dlp` updates.
 ---
 <div align="center">
 
-*Built with ❤️ for Anime & POV Creators.*
+*Built with ❤️ for Japanese Music Video Creators.*
 
 </div>
