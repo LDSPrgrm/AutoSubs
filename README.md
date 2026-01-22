@@ -1,7 +1,15 @@
-# 🎬 AutoSubs
-**AI-Powered Subtitle Creation & Editing Studio**
+<div align="center">
 
-![Badge](https://img.shields.io/badge/Platform-Windows-blue) ![Badge](https://img.shields.io/badge/Backend-FastAPI-green) ![Badge](https://img.shields.io/badge/AI-Faster--Whisper-purple) ![Badge](https://img.shields.io/badge/GPU-CUDA-red)
+# 🎬 AutoSubs
+### AI-Powered Subtitle Creation & Editing Studio
+
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Frontend](https://img.shields.io/badge/Frontend-Vue_3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![AI](https://img.shields.io/badge/AI-Faster_Whisper-4B32C3?style=for-the-badge)
+![Acceleration](https://img.shields.io/badge/Acceleration-CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+
+</div>
 
 ## ✨ Overview
 **AutoSubs** is a professional-grade web application designed to generate, time, and edit subtitles for music videos and Japanese content. Unlike basic subtitle generators, AutoSubs provides a full-featured **Non-Linear Editor (NLE)** interface for pixel-perfect timing adjustments.
