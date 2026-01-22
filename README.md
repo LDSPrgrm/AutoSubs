@@ -67,7 +67,12 @@ npm install
 ## 🎮 Controls & Usage
 
 ### Start the Studio
-You need two terminals running simultaneously.
+You can use the **One-Click Launcher** for the backend, or run terminals manually.
+
+**Option A: One-Click (Backend)**
+Simply double-click `start_backend.bat` in the root folder.
+
+**Option B: Manual Start**
 
 **Terminal 1 (API):**
 ```bash
@@ -88,7 +93,7 @@ npm run dev
 | **Transcribe** | Enter a YouTube URL and let the AI generate subtitles from scratch. |
 | **Custom Script** | Paste precise lyrics (JP/Romaji/EN) and let the AI **synchronize** them to the audio. |
 | **Magic Wand ✨** | Click to snap a segment's timing to the nearest raw AI timestamp. |
-| **Snap `<|`** | Instantly align a segment's start to the previous segment's end (Gapless). |
+| **Snap `\|<`** | Instantly align a segment's start to the previous segment's end (Gapless). |
 | **Lock ✅** | Mark a segment as "Good" to prevent accidental edits. |
 
 ## ⚙️ Configuration
@@ -110,4 +115,8 @@ A: Ensure **Vocals Separation** is enabled (or happens automatically in Custom S
 A: Start the specific download tool or check `yt-dlp` updates.
 
 ---
+<div align="center">
+
 *Built with ❤️ for Anime & POV Creators.*
+
+</div>
