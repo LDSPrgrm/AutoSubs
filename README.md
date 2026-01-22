@@ -1,120 +1,105 @@
-# AutoSubs 🎬
+# 🎬 AutoSubs
+**AI-Powered Subtitle Creation & Editing Studio**
 
-**AutoSubs** is a powerful, AI-driven web application designed to generate, time, and edit subtitles with precision. Built for creators who need pixel-perfect timing for music videos, anime, and Japanese content.
+![Badge](https://img.shields.io/badge/Platform-Windows-blue) ![Badge](https://img.shields.io/badge/Backend-FastAPI-green) ![Badge](https://img.shields.io/badge/AI-Faster--Whisper-purple) ![Badge](https://img.shields.io/badge/GPU-CUDA-red)
 
-## ✨ Key Features
+## ✨ Overview
+**AutoSubs** is a professional-grade web application designed to generate, time, and edit subtitles for music videos and Japanese content. Unlike basic subtitle generators, AutoSubs provides a full-featured **Non-Linear Editor (NLE)** interface for pixel-perfect timing adjustments.
 
-### 🧠 Smart AI Processing
-- **Auto-Transcription**: Powered by `faster-whisper` (Kotoba-Whisper v2.0) for state-of-the-art Japanese recognition.
-- **Auto-Translation**: Optional Japanese → English translation.
-- **Demucs Vocals Separation**: Automatically separates vocals from background music.
-- **Integrated Vocals Player**: Switch between the original audio and isolated vocals instantly to hear lyrics clearly.
+It combines state-of-the-art AI (**Kotoba-Whisper v2.0**) with a modern **Vue 3** dashboard to give you complete control over your subtitles.
 
-### 🎛️ Professional Editor Dashboard
-- **Timeline Cards**: A clean, card-based interface for every subtitle segment.
-- **Smart Focus Scrolling**: The editor automatically scrolls to the active segment while playing, keeping your place without losing context.
-- **"Good" Status Locking**: Mark segments as "Good" (✅) to lock them. Locked segments become read-only.
-- **Smart Snap (Magic Wand ✨)**: Messed up a segment? One click snaps it back to the nearest raw AI timestamp.
-- **Gapless Editing**: Use the **Snap-to-Previous** button (`|<`) to instantly align a segment's start time with the previous segment's end time.
+> **New in v2.0**: Integrated Vocals Player, 4K Video Downloader, and Smart "Magic Wand" Timing!
 
-### 🛡️ Safety & Workflow
-- **Global Undo System**: Made a mistake? A floating "Undo" notification lets you revert any action (Timing, Text, Delete, Merge).
-- **High-Quality Downloads**: Automatically detects and downloads the best available video quality (up to 4K) from YouTube.
-- **Project Save/Load**: Save your work as a `.json` project file and resume later exactly where you left off.
-- **Update Text Only**: Have perfect timing but want to change the lyrics? Use the "Update Text Only" feature to swap the text while keeping your locked timestamps intact.
+---
 
-## 🚀 Installation
+## ⚡ Core Features
 
-### Prerequisites
-- **Node.js** (v16+)
-- **Python 3.11+** (Recommend using Conda)
-- **FFmpeg** (Must be in your system PATH)
-- **CUDA GPU** (Recommended for faster AI processing)
+| Feature | Description |
+| :--- | :--- |
+| **🧠 Smart Transcription** | Powered by `Kotoba-Whisper` for high-accuracy Japanese recognition, even with background music. |
+| **🎼 Vocals Separation** | Automatically isolates vocals using **Demucs** to ensure the AI listens to the singer, not the drums. |
+| **🎛️ Pro Editor** | A drag-and-drop timeline with locking, merging, and "Magic Wand" smart snapping. |
+| **⚡ Smart Scrolling** | The editor automatically follows playback, keeping your active segment in focus. |
+| **🛡️ Global Undo** | Mistake-proof editing with a floating "Undo" notification for every action. |
+| **📥 4K Downloader** | Built-in tool to fetch the highest quality video (up to 4K) from YouTube automatically. |
+| **📝 Text-Only Update** | Swap lyrics without losing your perfect timing alignment. |
 
-### 1. Backend Setup
+## 🛠️ System Requirements
+Before setup, ensure you meet the following prerequisites:
+
+*   **OS**: Windows 10/11
+*   **Runtime**: Node.js (v16+) and Python 3.11+
+*   **GPU**: NVIDIA GPU with CUDA (Highly Recommended for AI performance)
+*   **Tools**: `ffmpeg` must be installed and in your system PATH.
+
+## 📦 Installation Guide
+
+We recommend using **Conda** to manage the Python environment to avoid conflict with system libraries.
+
+### 1. Initialize Backend
+Create the environment and install the AI engine.
+
 ```bash
-# Create a virtual environment
+# Create environment
 conda create -n AutoSubs python=3.11 -y
 conda activate AutoSubs
 
-# Install dependencies
+# Install Python dependencies
 pip install -r backend/requirements.txt
 ```
 
-### 2. Frontend Setup
+### 2. Initialize Frontend
+Install the Vue 3 web interface dependencies.
+
 ```bash
-cd AutoSubs
+cd AutoSubs // If not already in root
 npm install
 ```
 
-## ▶️ Usage Guide
+## 🎮 Controls & Usage
 
-### Starting the App
-1. **Start the API**:
-   ```bash
-   cd backend
-   uvicorn main:app --reload
-   ```
-2. **Start the UI**:
-   ```bash
-   # In a new terminal
-   npm run dev
-   ```
-3. Open `http://localhost:5173`.
+### Start the Studio
+You need two terminals running simultaneously.
 
-### Workflow
-1. **Select Source**: Paste a **YouTube URL** or **Upload** a generic video/audio file.
-2. **Choose Mode**:
-   - **Transcribe**: Let AI listen and write the subtitles.
-   - **Custom Script**: Paste your own lyrics (JP/Romaji/EN) and let the AI *synchronize* them to the audio.
-3. **Edit & Refine**:
-   - Use the **Timeline** to adjust start/end times.
-   - Click the **Checkmark** on a card to lock it as "Done".
-   - Use the **Magic Wand** if a timestamp looks wrong.
-   - Use **Snap-to-Previous** to close gaps between lines.
-4. **Export**: Click **Export .SRT** to download your final subtitle file.
-
-### "Update Text Only" Workflow
-*Perfect for when you've timed a song but realized you made a typo or want to add a translation later.*
-1. Load your existing project (or keep it open).
-2. Open the **Sidebar** and toggle **Custom Transcript**.
-3. Paste the *new* text (e.g., with added English lines).
-4. Click the purple **Update Text Only** button in the sidebar.
-5. Your timestamps remain untouched, but the text is instantly updated!
-
-## 📝 Script Format Examples
-
-You can paste lyrics/scripts in blocks separated by empty lines. The app supports 2-line or 3-line formats.
-
-**Example (Japanese + Romaji + English):**
-```text
-は あ～
-ha a~
-Ah…
-
-たーみなるは ごちゃついてて
-TAAMINARU wa gochatsuitete
-The terminal is crowded and noisy
-
-かぞくづれをみては ためいき
-kazokuzure o mite wa tameiki
-I watch families pass by and let out a sigh
+**Terminal 1 (API):**
+```bash
+cd backend
+uvicorn main:app --reload
 ```
 
-**Example (Japanese + Romaji):**
-```text
-わたし ひとり のる ひこうきは
-watashi hitori noru hikouki wa
-
-なんこのゆめ はこぶのだろう
-nanko no yume hakobu no darou
+**Terminal 2 (UI):**
+```bash
+npm run dev
 ```
+> Access the dashboard at: `http://localhost:5173`
 
-## 🏗️ Technology Stack
-- **Frontend**: Vue 3, Vuetify 3, Vite
-- **Backend**: FastAPI, Python
-- **AI Models**: Faster-Whisper, Demucs (Audio Separation)
-- **Tools**: yt-dlp, ffmpeg, librosa
+### Workflow Map
 
-## 📝 License
-MIT License. Feel free to fork and modify!
+| Action | Effect |
+| :--- | :--- |
+| **Transcribe** | Enter a YouTube URL and let the AI generate subtitles from scratch. |
+| **Custom Script** | Paste precise lyrics (JP/Romaji/EN) and let the AI **synchronize** them to the audio. |
+| **Magic Wand ✨** | Click to snap a segment's timing to the nearest raw AI timestamp. |
+| **Snap `<|`** | Instantly align a segment's start to the previous segment's end (Gapless). |
+| **Lock ✅** | Mark a segment as "Good" to prevent accidental edits. |
+
+## ⚙️ Configuration
+
+The backend is configured via `backend/main.py`. Key logic includes:
+
+| Component | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Whisper Model** | `kotoba-tech/kotoba-whisper-v2.0-faster` | Optimized for Japanese speech. |
+| **Quantization** | `float16` (GPU) / `int8` (CPU) | Auto-switches based on hardware availability. |
+| **Vocals** | `Demucs (htdemucs)` | Separates stems to improve transcription accuracy. |
+
+## ❓ Troubleshooting
+
+**Q: "The AI output is gibberish on music videos."**
+A: Ensure **Vocals Separation** is enabled (or happens automatically in Custom Script mode). Drums and guitars confuse the AI.
+
+**Q: "Download fails."**
+A: Start the specific download tool or check `yt-dlp` updates.
+
+---
+*Built with ❤️ for Anime & POV Creators.*
